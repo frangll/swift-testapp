@@ -1,7 +1,8 @@
 import UIKit
 
 protocol AddMovementViewControllerDelegate: AnyObject {
-    func addMovementViewController(_ addMovementViewController: AddMovementViewController, didTapConfirmWithAmout amount: String!, and name: String!)
+    func addMovementViewController(_ addMovementViewController: AddMovementViewController, didTapConfirmWithAmout amount: String, and name: String)
+    func addMovementViewControllerDidTapTrashIcon(_ addMovementViewController: AddMovementViewController)
 }
 
 class AddMovementViewController: UIViewController {
@@ -103,18 +104,17 @@ class AddMovementViewController: UIViewController {
     }
     
     @objc func navigatorIconTapped() {
-        dismiss(animated: true)
+        delegate?.addMovementViewControllerDidTapTrashIcon(self)
     }
     
     @objc func confirmButtonTapped() {
         // controllare i valori delle textfield
-        let amount = self.importTextField.text
-        let name = self.nameTextField.text
+        guard let amount = self.importTextField.text else { return }
+        guard let name = self.nameTextField.text else { return }
         
-        if amount!.count > 0 && name!.count > 0 {
+        if amount.count > 0 && name.count > 0 {
             // prendere i valori dalle textfield
-            delegate?.addMovementViewController(self, didTapConfirmWithAmout: self.importTextField.text, and: self.nameTextField.text)
-            dismiss(animated: true)
+            delegate?.addMovementViewController(self, didTapConfirmWithAmout: amount, and: name)
         }
     }
 }

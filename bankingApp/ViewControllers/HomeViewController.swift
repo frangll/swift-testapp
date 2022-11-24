@@ -152,9 +152,3 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
-extension HomeViewController: AddMovementViewControllerDelegate {
-    func addMovementViewController(_ addMovementViewController: AddMovementViewController, didTapConfirmWithAmout amount: String!, and name: String!) {
-        addMovement(with: amount, and: name)
-    }
-}
