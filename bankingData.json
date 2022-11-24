@@ -1,0 +1,135 @@
+{
+    "infoPrincipali": {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "saldo": "400,00"
+    },
+    "carte": [
+        {
+            "circuito": "VISA",
+            "coloreHex": "#ebcf34"
+        },
+        {
+            "circuito": "MASTERCARD",
+            "coloreHex": "#d17724"
+        },
+        {
+            "circuito": "MAESTRO",
+            "coloreHex": "#397adb"
+        },
+        {
+            "circuito": "AMERICAN EXPRESS",
+            "coloreHex": "#4d463f"
+        },
+        {
+            "circuito": "MAESTRO",
+            "coloreHex": "#397adb"
+        },
+        {
+            "circuito": "VISA",
+            "coloreHex": "#ebcf34"
+        }
+    ],
+    "listaMovimenti": [
+        {
+            "esercente": "Esercente 1",
+            "descrizione": "Acquisto Esercente 1",
+            "importo": "500,00"
+        },
+        {
+            "esercente": "Esercente 2",
+            "descrizione": "Acquisto Esercente 2",
+            "importo": "28,18"
+        },
+        {
+            "esercente": "Esercente 3",
+            "descrizione": "Acquisto Esercente 3",
+            "importo": "50"
+        },
+        {
+            "esercente": "Esercente 4",
+            "descrizione": "Acquisto Esercente 4",
+            "importo": "80,84"
+        },
+        {
+            "esercente": "Esercente 5",
+            "descrizione": "Acquisto Esercente 5",
+            "importo": "90,31"
+        },
+        {
+            "esercente": "Esercente 6",
+            "descrizione": "Acquisto Esercente 6",
+            "importo": "11,30"
+        },
+        {
+            "esercente": "Esercente 7",
+            "descrizione": "Acquisto Esercente 7",
+            "importo": "5,90"
+        },
+        {
+            "esercente": "Esercente 8",
+            "descrizione": "Acquisto Esercente 8",
+            "importo": "1,20"
+        },
+        {
+            "esercente": "Esercente 9",
+            "descrizione": "Acquisto Esercente 9",
+            "importo": "0,50"
+        },
+        {
+            "esercente": "Esercente 10",
+            "descrizione": "Acquisto Esercente 10",
+            "importo": "22,35"
+        },
+        {
+            "esercente": "Esercente 11",
+            "descrizione": "Acquisto Esercente 11",
+            "importo": "88,50"
+        },
+        {
+            "esercente": "Esercente 12",
+            "descrizione": "Acquisto Esercente 12",
+            "importo": "91,20"
+        },
+        {
+            "esercente": "Esercente 13",
+            "descrizione": "Acquisto Esercente 13",
+            "importo": "100,30"
+        },
+        {
+            "esercente": "Esercente 14",
+            "descrizione": "Acquisto Esercente 14",
+            "importo": "800"
+        },
+        {
+            "esercente": "Esercente 15",
+            "descrizione": "Acquisto Esercente 15",
+            "importo": "60,43"
+        },
+        {
+            "esercente": "Esercente 16",
+            "descrizione": "Acquisto Esercente 16",
+            "importo": "45,33"
+        },
+        {
+            "esercente": "Esercente 17",
+            "descrizione": "Acquisto Esercente 17",
+            "importo": "4,50"
+        },
+        {
+            "esercente": "Esercente 18",
+            "descrizione": "Acquisto Esercente 18",
+            "importo": "100,00"
+        },
+        {
+            "esercente": "Esercente 19",
+            "descrizione": "Acquisto Esercente 19",
+            "importo": "120,00"
+        },
+        {
+            "esercente": "Esercente 20",
+            "descrizione": "Acquisto Esercente 20",
+            "importo": "130,00"
+        }
+    ]
+}
