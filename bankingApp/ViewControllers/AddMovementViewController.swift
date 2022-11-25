@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 protocol AddMovementViewControllerDelegate: AnyObject {
     func addMovementViewController(_ addMovementViewController: AddMovementViewController, didTapConfirmWithAmout amount: String, and name: String)
@@ -9,6 +10,8 @@ class AddMovementViewController: UIViewController {
     
     weak var delegate: AddMovementViewControllerDelegate?
     
+    @Published var numberOfCharInName: Int = 0
+    
     lazy var importTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -18,13 +21,34 @@ class AddMovementViewController: UIViewController {
     
     lazy var nameTextField: UITextField = {
         let textField = UITextField()
+        textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
         return textField
     }()
     
+    private var cancellables: Set<AnyCancellable> = []
+    
+    func bindProperties() {
+        
+//        nameTextField.publisher(for: \.text)
+//            .compactMap { $0 }
+//            .sink { [weak self] text in
+//                guard let self = self else { return }
+//                self.numberOfCharInName = text.count
+//            }
+//            .store(in: &cancellables)
+        
+//        $numberOfCharInName
+//            .sink { value in
+//
+//            }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindProperties()
         
         view.backgroundColor = .systemBackground
         
@@ -56,6 +80,10 @@ class AddMovementViewController: UIViewController {
         let importLabel = UILabel()
         importLabel.translatesAutoresizingMaskIntoConstraints = false
         importLabel.text = "Importo"
+        
+        let lengthNameLabel = UILabel()
+        lengthNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        lengthNameLabel.text = "La lunghezza è di \(numberOfCharInName)"
         
         let currencyLabel = UILabel()
         currencyLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -116,5 +144,20 @@ class AddMovementViewController: UIViewController {
             // prendere i valori dalle textfield
             delegate?.addMovementViewController(self, didTapConfirmWithAmout: amount, and: name)
         }
+    }
+}
+
+extension AddMovementViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // richiamato ogni volta che il testo all'interno della textfield viene modificato
+        guard var fullString = textField.text else { return true }
+        fullString += string
+        let count = fullString.count
+        
+        numberOfCharInName = count
+
+        print(numberOfCharInName)
+        return true
     }
 }
